@@ -9,56 +9,41 @@ class Mysql extends Report{
 		$errno = $mysql->errno;
 		$error = $mysql->error;
 
-		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
-		$text = $conf->all();
+		$msg = self::setMsg($errno);
 
 
-		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
-		if(isset($GLOBALS["r"][0])){
-			$msg = sprintf($msg, $GLOBALS["r"][0]);
-		}
-		unset($GLOBALS["r"]);
-
-		$GLOBALS["report"]["form"][] = new Data([
+		$GLOBALS["report"][] = new Data([
 			"state" => "fail",
 			"errno" => $errno,
 			"msg"   => $msg
 		]);
 		return;
 
-
-		if($errno == 1062){
-			$GLOBALS["report"]["form"][] = new Data([
-				"state" => "fail",
-				"errno" => $errno,
-				"msg"   => $error
-			]);
-			return;
-		}
+	}
 
 
-		if($errno == 1146){
-			$GLOBALS["report"]["form"][] = new Data([
-				"state" => "fail",
-				"errno" => $errno,
-				"msg"   => "Tabulka neexistuje"
-			]);
-			return;
-		}
+	private function setMsg($errno){
+		// LOAD JSON DATA
+		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
+		$text = $conf->all();
 
+		// CHOOSE teh BEST JSON MSG
+		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 
-		$GLOBALS["report"]["form"][] = new Data([
-			"state" => "success",
-			"errno" => $errno,
-			"msg"   => "Položka byla úspěšně nahrána: ".$errno
-		]);
+		// ADD VARIABLE in IT
+		$one = (isset($GLOBALS["r"][0]))? $GLOBALS["r"][0] : "";
+		$two = (isset($GLOBALS["r"][1]))? $GLOBALS["r"][1] : "";
+		$three = (isset($GLOBALS["r"][2]))? $GLOBALS["r"][2] : "";
+		unset($GLOBALS["r"]);
+
+		return = sprintf($msg, $one, $two, $three);
 
 	}
 
 
 	public static function get(){
-		if(!isset($GLOBALS["report"]["form"])) return [];
-		return $GLOBALS["report"]["form"];
+		if(!isset($GLOBALS["report"])) return [];
+		return $GLOBALS["report"];
 	}
 
 }
