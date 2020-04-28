@@ -30,13 +30,9 @@ class Mysql{
 		// CHOOSE teh BEST JSON MSG
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 
-		// ADD VARIABLE in IT
-		$one =   \Report\Data::get(0);
-		$two =   \Report\Data::get(1);
-		$three = \Report\Data::get(2);
+		$return = vsprintf($msg, \Report\Data::get());
 		\Report\Data::clear();
-
-		return sprintf($msg, $one, $two, $three);
+		return $return;
 
 	}
 
