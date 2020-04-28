@@ -1,0 +1,40 @@
+{
+	"file": {
+		"success": {
+			"rename": 	"Soubor byl úspěšně přejmenován.",
+			"copy": 	"Soubor byl úspěšně zkopírován.",
+			"upload": 	"Soubor byl úspěšně nahrán.",
+			"delete": 	"Soubor byl úspěšně smazán."
+		},
+		"info": {
+
+
+		},
+		"warning": {
+
+		},
+		"fail": {
+			"rename": 	"Soubor nebyl úspěšně přejmenován.",
+			"copy": 	"Soubor nebyl úspěšně zkopírován.",
+			"upload": 	"Soubor nebyl úspěšně nahrán.",
+			"delete": 	"Soubor nebyl úspěšně smazán."
+		},
+	},
+	"form": {
+		"success": {
+			"": "";
+		},
+		"info": {
+
+
+		},
+		"warning": {
+
+		},
+		"fail": {
+
+		},
+	}
+
+
+}
