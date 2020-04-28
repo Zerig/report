@@ -50,18 +50,20 @@ class Mysql{
 		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
 
-		if($errno == 0)		$msg = $text["mysql"][$state][$query_type];
-		if($errno != 0)		$msg = $text["mysql"][$state][$errno];
+		if($errno == 0)		$msg = (isset($text["mysql"][$state][$query_type]))? $text["mysql"][$state][$query_type] : $text["mysql"][$state][0];
+		if($errno != 0)		$msg = (isset($text["mysql"][$state][$errno]))? 	 $text["mysql"][$state][$errno] 	 : $text["mysql"][$state][0];
+
 
 
 		// CHOOSE teh BEST JSON MSG
-		$msg = (isset($text["mysql"][$state][$errno]))? $text["mysql"][$state][$errno] : $text["mysql"][$state][0];
+		//$msg = (isset($text["mysql"][$state][$errno]))? $text["mysql"][$state][$errno] : $text["mysql"][$state][0];
 		$num = substr_count($msg, "%s");
 		$len = count(\Report\Data::get());
 
 		for($i = 0; $i < $num - $len; $i++){
-			\Report\Data::add();
+			\Report\Data::add("");
 		}
+
 
 
 		$return = vsprintf($msg, \Report\Data::get());

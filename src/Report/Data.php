@@ -7,7 +7,7 @@ class Data{
 		$GLOBALS["report_data"] = $array;
 	}
 
-	public static function add($item = null){
+	public static function add($item = ""){
 		$GLOBALS["report_data"][] = $item;
 	}
 
