@@ -5,11 +5,13 @@ class Mysql extends Report{
 
 
 
-	public static function set($errno, $error){
+	public static function set($mysql, $sql){
+		$errno = $mysql->errno;
+		$error = $mysql->error;
+
 		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
 
-		echo print_r($text);
 
 
 		$GLOBALS["report"]["form"][] = new Data([
