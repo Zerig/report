@@ -7,6 +7,12 @@ class Data{
 		$GLOBALS["report_data"] = $array;
 	}
 
+	public static function add($item = null){
+		$GLOBALS["report_data"][] = $item;
+	}
+
+
+
 	public static function get($i = null){
 		if(!isset($GLOBALS["report_data"]) && is_null($i))	return [];
 		if(!isset($GLOBALS["report_data"]) && !is_null($i))	return null;

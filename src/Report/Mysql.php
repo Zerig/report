@@ -29,6 +29,13 @@ class Mysql{
 
 		// CHOOSE teh BEST JSON MSG
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
+		$num = substr_count($msg, "%s");
+		$len = count(\Report\Data::get());
+
+		for($i = 0; $i < $num - $len; $i++){
+			\Report\Data::add();
+		}
+
 
 		$return = vsprintf($msg, \Report\Data::get());
 		\Report\Data::clear();
