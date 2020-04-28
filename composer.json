@@ -1,6 +1,6 @@
 {
     "name": "zerig/report",
-    "description": "Works with data which could be helpful during creating system.",
+    "description": "Report user about what happend.",
     "type": "library",
 	"keywords": [
         "report"
