@@ -31,9 +31,9 @@ class Mysql{
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 
 		// ADD VARIABLE in IT
-		$one =   (\Report\Data::isset(0))? \Report\Data::get(0) : "";
-		$two =   (\Report\Data::isset(1))? \Report\Data::get(1) : "";
-		$three = (\Report\Data::isset(2))? \Report\Data::get(2) : "";
+		$one =   (\Report\Data::exist(0))? \Report\Data::get(0) : "";
+		$two =   (\Report\Data::exist(1))? \Report\Data::get(1) : "";
+		$three = (\Report\Data::exist(2))? \Report\Data::get(2) : "";
 		\Report\Data::unset();
 
 		return sprintf($msg, $one, $two, $three);

@@ -13,7 +13,7 @@ class Data{
 		if($i < 0) 		return $GLOBALS["report_data"][count($GLOBALS["report_data"]) + $i];
 	}
 
-	public static function isset($i = null){
+	public static function exist($i = null){
 		return isset( $GLOBALS["report_data"][$i] );
 	}
 
