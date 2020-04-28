@@ -1,14 +1,30 @@
 {
 
-	"fail": {
-		"0": "Něco se pokazilo, omlouváme se!",
-		"mysql":{
-			"0": "Při práci s daty došlo k chybě!",
-			"insert":{
-				"0": "Při nahrávání dat došlo k chybě!",
-				"duplicate": "Položka nebyla nahrána! Již existuje!",
-				"missing": "Je po"
-			}
+	"mysql": {
+		"fail":{
+			"0":	"Něco se pokazilo!",
+			"1062": "Duplicitní položka <i>%s</i> již existuje!",
+			"1146": "Tabulka <i>%s</i> neexistuje!"
+		},
+		"info":{
+			"0":	"Akce nebyla úspěšně provedena, protože se něco mezitím stalo!",
+			"0200":	"Položka <i>%s</i> nemůže být upraven/a, protože již neexistuje!",
+			"0300":	"Položka <i>%s</i> nemůže být smazán/a, protože již neexistuje!",
+			"0400":	"Nebyla nalezena žádná položka!"
+		},
+		"success":{
+			"0":	"Vše proběhlo v pořádku.",
+			"0100":	"Položka <i>%s</i> byla úspěšně vložena.",
+			"0200":	"Položka <i>%s</i> byla úspěšně upravena.",
+			"0300":	"Položka <i>%s</i> byla úspěšně smazána.",
+			"0400":	"Položka <i>%s</i> byla úspěšně nalezena."
+		}
+	},
+	"file": {
+		"fail":{
+			"0":	"Něco se pokazilo",
+			"1062": "Duplicitní Položka: <i>%s</i> již existuje!",
+			"1146": "Tabulka neexistuje"
 		}
 	}
 

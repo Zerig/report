@@ -2,8 +2,28 @@
 
 	"mysql": {
 		"fail":{
+			"0":		"Něco se pokazilo!",
+			"1062": 	"Duplicitní položka <i>%s</i> již existuje!",
+			"1146": 	"Tabulka <i>%s</i> neexistuje!"
+		},
+		"info":{
+			"0":		"Akce nebyla úspěšně provedena, protože se něco mezitím stalo!",
+			"update":	"Položka <i>%s</i> nemůže být upraven/a, protože již neexistuje!",
+			"delete":	"Položka <i>%s</i> nemůže být smazán/a, protože již neexistuje!",
+			"select":	"Nebyla nalezena žádná položka!"
+		},
+		"success":{
+			"0":		"Vše proběhlo v pořádku.",
+			"insert":	"Položka <i>%s</i> byla úspěšně vložena.",
+			"update":	"Položka <i>%s</i> byla úspěšně upravena.",
+			"delete":	"Položka <i>%s</i> byla úspěšně smazána.",
+			"select":	"Položka <i>%s</i> byla úspěšně nalezena."
+		}
+	},
+	"file": {
+		"fail":{
 			"0":	"Něco se pokazilo",
-			"1062": "Duplicitní Položka: '%s' již existuje!",
+			"1062": "Duplicitní Položka: <i>%s</i> již existuje!",
 			"1146": "Tabulka neexistuje"
 		}
 	}
