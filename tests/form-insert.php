@@ -13,6 +13,7 @@ echo "<hr>";
 
 
 
+\Report\Mysql::set(0, "aaa")
 
 
 

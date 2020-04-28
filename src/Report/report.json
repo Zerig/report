@@ -2,8 +2,9 @@
 
 	"mysql": {
 		"fail":{
+			"0":	"Něco se pokazilo",
 			"1062": "Duplicitní položka",
-			"1146": "Tabulka neexistuje",
+			"1146": "Tabulka neexistuje"
 		}
 	}
 

@@ -6,14 +6,16 @@ class Mysql extends Report{
 
 
 	public static function set($errno, $error){
-		$conf = \Noodlehaus\Config::load('report.json');
+		$conf = \Noodlehaus\Config::load('../src/Report/report.json');
 		$text = $conf->all();
+
+		echo print_r($text);
 
 
 		$GLOBALS["report"]["form"][] = new Data([
 			"state" => "fail",
 			"errno" => $errno,
-			"msg"   => $text["Mysql"]["fail"][$error]
+			"msg"   => (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0]
 		]);
 		return;
 
