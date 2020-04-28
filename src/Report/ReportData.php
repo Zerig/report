@@ -1,7 +1,7 @@
 <?php
 namespace Report;
 
-class Data{
+class rData{
 	public $type;
 	public $text;
 

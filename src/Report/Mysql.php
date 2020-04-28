@@ -12,7 +12,7 @@ class Mysql{
 		$msg = self::setMsg($errno);
 
 
-		$GLOBALS["report"][] = new Data([
+		$GLOBALS["report"][] = new rData([
 			"state" => "fail",
 			"errno" => $errno,
 			"msg"   => $msg
