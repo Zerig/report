@@ -11,9 +11,9 @@ class Data{
 		if(!isset($GLOBALS["report_data"]) && is_null($i))	return [];
 		if(!isset($GLOBALS["report_data"]) && !is_null($i))	return null;
 
-		if(is_null($i)) return $GLOBALS["report_data"];
-		if($i >= 0) 	return $GLOBALS["report_data"][$i];
-		if($i < 0) 		return $GLOBALS["report_data"][count($GLOBALS["report_data"]) + $i];
+		if(is_null($i)) return (isset($GLOBALS["report_data"]))? 										$GLOBALS["report_data"] : [];
+		if($i >= 0) 	return (isset($GLOBALS["report_data"][$i]))? 									$GLOBALS["report_data"][$i] : null;
+		if($i < 0) 		return (isset($GLOBALS["report_data"][count($GLOBALS["report_data"]) + $i]))?	$GLOBALS["report_data"][count($GLOBALS["report_data"]) + $i] : null;
 	}
 
 	public static function exist($i = null){
