@@ -1,7 +1,7 @@
 <?php
 namespace Report;
 
-class Mysql extends Report{
+class Mysql{
 
 
 
@@ -31,10 +31,10 @@ class Mysql extends Report{
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 
 		// ADD VARIABLE in IT
-		$one = (isset(self::getData(0)))? self::getData(0) : "";
-		$two = (isset(self::getData(1)))? self::getData(1) : "";
-		$three = (isset(self::getData(2)))? self::getData(2) : "";
-		self::unsetData();
+		$one = (isset(\Report\Data::isset(0)))? \Report\Data::get(0) : "";
+		$two = (isset(\Report\Data::isset(1)))? \Report\Data::get(1) : "";
+		$three = (isset(\Report\Data::isset(2)))? \Report\Data::get(2) : "";
+		\Report\Data::unset();
 
 		return sprintf($msg, $one, $two, $three);
 
