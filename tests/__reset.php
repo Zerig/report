@@ -1,4 +1,5 @@
 <?php
+/*
 // Create connection
 $GLOBALS["mysql"] = new \SqlManager\Mysql([
 	"server_name"	=> "localhost",
@@ -33,3 +34,4 @@ $msg = $GLOBALS["mysql"]->multi_query("
 
 	-- 2020-04-16 07:06:49
 ");
+*/

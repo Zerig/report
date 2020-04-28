@@ -12,6 +12,20 @@ echo "<hr>";
 
 
 
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
 $res = $GLOBALS["mysql"]->insert("man", ["name"=> "Smazat", "age" => "54"]);
 echo '$res = $GLOBALS["mysql"]->insert("man", ["name"=> "Smazat", "age" => "54"]) => '.$res."\n";
 \Report\Form::insert($res);
@@ -105,6 +119,7 @@ foreach($mr_man->get_objects() as $man){
 	echo '</tr>';
 }
 echo '</table>';
+*/
 ?>
 </div>
 
