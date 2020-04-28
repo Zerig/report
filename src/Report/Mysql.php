@@ -50,7 +50,7 @@ class Mysql{
 		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
 
-		//if($errno == 0)		$msg = $text["mysql"][$state][$query_type];
+		if($errno == 0)		$msg = $text["mysql"][$state][$query_type];
 		if($errno != 0)		$msg = $text["mysql"][$state][$errno];
 
 
