@@ -34,7 +34,7 @@ class Mysql{
 		$one =   (\Report\Data::exist(0))? \Report\Data::get(0) : "";
 		$two =   (\Report\Data::exist(1))? \Report\Data::get(1) : "";
 		$three = (\Report\Data::exist(2))? \Report\Data::get(2) : "";
-		\Report\Data::unset();
+		\Report\Data::clear();
 
 		return sprintf($msg, $one, $two, $three);
 

@@ -17,7 +17,7 @@ class Data{
 		return isset( $GLOBALS["report_data"][$i] );
 	}
 
-	public static function unset($array = []){
+	public static function clear($array = []){
 		unset($GLOBALS["report_data"]);
 	}
 
