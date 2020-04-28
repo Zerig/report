@@ -17,6 +17,7 @@ class Mysql extends Report{
 		if(isset($GLOBALS["r"][0])){
 			$msg .= $GLOBALS["r"][0];
 		}
+		unset($GLOBALS["r"]);
 
 		$GLOBALS["report"]["form"][] = new Data([
 			"state" => "fail",
