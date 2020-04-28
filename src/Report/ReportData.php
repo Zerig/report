@@ -1,7 +1,7 @@
 <?php
-namespace Console;
+namespace Report;
 
-class ReportData{
+class Data{
 	public $type;
 	public $text;
 

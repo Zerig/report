@@ -7,12 +7,12 @@ class Form extends Report{
 
 	public static function insert($result){
 
-		if(!$result) $GLOBALS["report"]["form"][] = new ReportData([
+		if(!$result) $GLOBALS["report"]["form"][] = new Data([
 			"state" => "fail",
 			"msg"   => "Položka nebyla nahrána!"
 		]);
 
-		if($result)  $GLOBALS["report"]["form"][] = new ReportData([
+		if($result)  $GLOBALS["report"]["form"][] = new Data([
 			"state" => "success",
 			"msg"   => "Položka byla úspěšně nahrána"
 		]);
