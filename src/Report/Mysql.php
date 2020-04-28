@@ -31,10 +31,10 @@ class Mysql extends Report{
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 
 		// ADD VARIABLE in IT
-		$one = (isset($GLOBALS["r"][0]))? $GLOBALS["r"][0] : "";
-		$two = (isset($GLOBALS["r"][1]))? $GLOBALS["r"][1] : "";
-		$three = (isset($GLOBALS["r"][2]))? $GLOBALS["r"][2] : "";
-		unset($GLOBALS["r"]);
+		$one = (isset(self::getData(0)))? self::getData(0) : "";
+		$two = (isset(self::getData(1)))? self::getData(1) : "";
+		$three = (isset(self::getData(2)))? self::getData(2) : "";
+		self::unsetData();
 
 		return sprintf($msg, $one, $two, $three);
 
