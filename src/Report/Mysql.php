@@ -36,7 +36,7 @@ class Mysql extends Report{
 		$three = (isset($GLOBALS["r"][2]))? $GLOBALS["r"][2] : "";
 		unset($GLOBALS["r"]);
 
-		return = sprintf($msg, $one, $two, $three);
+		return sprintf($msg, $one, $two, $three);
 
 	}
 
