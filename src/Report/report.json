@@ -3,7 +3,7 @@
 	"mysql": {
 		"fail":{
 			"0":	"Něco se pokazilo",
-			"1062": "Položka %s již existuje!",
+			"1062": "Duplicitní Položka: '%s' již existuje!",
 			"1146": "Tabulka neexistuje"
 		}
 	}
