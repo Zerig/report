@@ -15,7 +15,7 @@ class Mysql extends Report{
 
 		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
 		if(isset($GLOBALS["r"][0])){
-			$msg .= $GLOBALS["r"][0];
+			$msg = sprintf($msg, $GLOBALS["r"][0]);
 		}
 		unset($GLOBALS["r"]);
 
