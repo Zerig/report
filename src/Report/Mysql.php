@@ -13,11 +13,15 @@ class Mysql extends Report{
 		$text = $conf->all();
 
 
+		$msg = (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0];
+		if(isset($GLOBALS["r"][0])){
+			$msg .= $GLOBALS["r"][0];
+		}
 
 		$GLOBALS["report"]["form"][] = new Data([
 			"state" => "fail",
 			"errno" => $errno,
-			"msg"   => (isset($text["mysql"]["fail"][$errno]))? $text["mysql"]["fail"][$errno] : $text["mysql"]["fail"][0]
+			"msg"   => $msg
 		]);
 		return;
 
