@@ -6,7 +6,7 @@ class Mysql extends Report{
 
 
 	public static function set($errno, $error){
-		$conf = \Noodlehaus\Config::load('../src/Report/report.json');
+		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
 
 		echo print_r($text);
