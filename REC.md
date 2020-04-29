@@ -233,3 +233,62 @@ $my_rec->msg()   => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in local."]);
 ]
 ```
+
+
+
+
+
+# HTML PRINT RECORDING
+Html print use what you save in this GLOBAL variable.
+- `'%g'` where will be `$group` variable
+- `'%s'` where will be `$state` variable
+- `'%m'` where will be `$msg` variable
+- `'%t'` where will be `$type` variable
+- `'%n'` where will be `$num` variable
+```php
+$GLOBALS["html_msg"] = "[%s] %m";
+```
+
+## getHtml($i = null)
+- **$i [num]** id of item you want
+
+Returns all records. Depends if you use it **GLOBALLY** or **LOCALLY**.
+### GLOBAL RECORDS - all records
+```php
+\Report\Rec::get(0)  => "[fail] This action failed in global array."
+\Report\Rec::get()   => "
+[fail] This action failed in global array.
+[info] This action inform you in global array.
+[fail] This action failed in local.
+[success] This action success in local.
+[success] This action also success in local.
+[success] This action succes in global array.
+";
+```
+### LOCAL RECORDS - records from `start()` to `end()`
+```php
+$my_rec->get(0)  => "[fail] This action failed in local."
+$my_rec->get()   => "
+[fail] This action failed in local.
+[success] This action success in local.
+[success] This action also success in local.
+";
+```
+
+
+
+## msgHtml()
+return only whole array which **FAILED**. Depends if you use it **GLOBALLY** or **LOCALLY**.
+### GLOBAL RECORDS - all records
+```php
+\Report\Rec::msgHtml()   => "
+[fail] This action failed in global array.
+[fail] This action failed in local.
+";
+```
+### LOCAL RECORDS - records from `start()` to `end()`
+```php
+$my_rec->msgHtml()   => "
+[fail] This action failed in local
+"
+```
