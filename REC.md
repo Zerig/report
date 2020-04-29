@@ -76,7 +76,7 @@ $my_rec->msgHtml() => [
 
 # GLOBAL RECORDING
 ## ::add($rData)
-- **$rData [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]**
+- **$rData [array / [Report\rData](https://github.com/Zerig/report/blob/master/rDATA.md)]**
 
 Add instance of `rData` into **GLOBAL array report**
 ```php

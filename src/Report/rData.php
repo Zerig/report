@@ -2,7 +2,7 @@
 namespace Report;
 
 class rData{
-	public $name = null;
+	public $group = null;
 	public $state = null;
 	public $msg = null;
 	public $type = null;
