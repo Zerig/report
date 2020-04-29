@@ -132,9 +132,10 @@ Returns number of items in **GLOBAL array** reports
 <hr>
 <br>
 
-# INIT RECORDING
+# INIT LOCAL RECORDING
 ## start($success = null)
 - **$success [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** what will be shown if all report success
+
 From `start()` also begins collecting record **locally**. Globals still continue!
 
 ## end()
