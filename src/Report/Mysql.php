@@ -1,7 +1,13 @@
 <?php
 namespace Report;
 
-class Mysql{
+class Mysql extends Action{
+
+
+
+
+	
+
 
 
 
@@ -61,7 +67,7 @@ class Mysql{
 		$len = count(\Report\Data::get());
 
 		for($i = 0; $i < $num - $len; $i++){
-			\Report\Data::add("");
+			//\Report\Data::add("");
 		}
 
 
@@ -73,9 +79,9 @@ class Mysql{
 	}
 
 
-	public static function get(){
-		if(!isset($GLOBALS["report"])) return [];
-		return $GLOBALS["report"];
-	}
+
+
+
+
 
 }
