@@ -6,7 +6,7 @@ class Mysql extends Action{
 
 
 
-	
+
 
 
 
@@ -26,6 +26,7 @@ class Mysql extends Action{
 
 		$GLOBALS["report"][] = new rData([
 			"state" => $state,
+			"type"  => "mysql",
 			"errno" => $errno,
 			"rows"  => $affected_rows,
 			"msg"   => $msg

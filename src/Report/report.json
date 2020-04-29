@@ -1,5 +1,15 @@
 {
-
+	"action": {
+		"fail":{
+			"0": "Něco se pokazilo!"
+		},
+		"info":{
+			"0": "Nic neproběhlo."
+		},
+		"success":{
+			"0": "Vše proběhlo v pořádku."
+		}
+	},
 	"mysql": {
 		"fail":{
 			"0":		"Něco se pokazilo!",
