@@ -11,7 +11,11 @@ class Action{
 		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
 
-		$msg = $text[$group][$state][$type];
+		$msg = str_replace(
+			["%g", "%s", "%t", "%n"],
+			[$group, $state, $type, $num],
+			$text[$group][$state][$type]
+		);
 
 		\Report\Rec::add(new \Report\rData([
 			"group"  => $group,
