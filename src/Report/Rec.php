@@ -53,7 +53,7 @@ class Rec{
 
 
 	public function msgHtml(){
-		return self::toHtml(self:msg());
+		return self::toHtml(self::msg());
 	}
 
 

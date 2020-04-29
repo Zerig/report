@@ -86,7 +86,7 @@ echo "<h2>REPORT</h2>";
 echo "<hr>";
 
 echo '<table style="width:100%; text-align:left;">';
-foreach(\Report\Data::get() as $report_data){
+foreach(\Report\Rec::get() as $report_data){
 	echo '<tr>';
 		echo '<td>['.$report_data->state.']</td>';
 		echo '<td>['.$report_data->type.']</td>';

@@ -13,20 +13,20 @@
 	"mysql": {
 		"fail":{
 			"0":		"Něco se pokazilo!",
-			"1062": 	"Duplicita: %s <i>%s</i> již existuje!"
+			"1062": 	"Duplicita: %0 <i>%1</i> již existuje!"
 		},
 		"info":{
 			"0":		"Akce nebyla provedena, něco neplatí!",
-			"update":	"%s <i>%s</i> nemůže být upraven/a, protože neexistuje!",
-			"delete":	"%s <i>%s</i> nemůže být smazán/a, protože neexistuje!",
+			"update":	"%0 <i>%1</i> nemůže být upraven/a, protože neexistuje!",
+			"delete":	"%0 <i>%1</i> nemůže být smazán/a, protože neexistuje!",
 			"select":	"Nebyl/a nalezen/a žádný/á %s!"
 		},
 		"success":{
 			"0":		"Vše proběhlo v pořádku.",
-			"insert":	"%s <i>%s</i> byl/a úspěšně přidána.",
-			"update":	"%s <i>%s</i> byl/a úspěšně upraven/a.",
-			"delete":	"%s <i>%s</i> byl/a úspěšně smazána.",
-			"select":	"%s <i>%s</i> byl/a úspěšně nalezen/a."
+			"insert":	"%0 <i>%1</i> byl/a úspěšně přidána.",
+			"update":	"%0 <i>%1</i> byl/a úspěšně upraven/a.",
+			"delete":	"%0 <i>%1</i> byl/a úspěšně smazána.",
+			"select":	"%0 <i>%1</i> byl/a úspěšně nalezen/a."
 		}
 	},
 	"file": {
