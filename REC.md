@@ -12,7 +12,7 @@ There is 2 ways how to work with this class:
 # STATIC PART
 
 ## ::add($rData)
-- **$rData [[Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** 
+- **$rData [[Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]**
 
 Add instance of `rData` into GLOBAL array report
 
@@ -28,29 +28,12 @@ Add instance of `rData` into GLOBAL array report
 ```
 
 
+## ::getDepth()
+- **@returns [int]** number of current collect reports
 
-
+Add instance of `rData` into GLOBAL array report
 
 ```php
-public $depth;		//
-public $data = [];
-public $success;
+\Report\Rec::getDapth()	=> 3
 
-```
-
-
-
-## ::mysql($sql)
-collect information about sql activity.
-```php
-\Console\Log::mysql("
-	SELECT *
-	FROM table
-");
-```
-
-## ::include($page_name)
-collect information about page include.
-```php
-\Console\Log::include("index.php");
 ```

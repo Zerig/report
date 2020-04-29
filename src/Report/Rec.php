@@ -83,7 +83,7 @@ class Rec{
 	public static function add($rData){
 		$GLOBALS["rreport"][] = $rData;
 	}
-	public static function getDepth($i = null){
+	public static function getDepth(){
 		return (isset($GLOBALS["rreport"]))?	count($GLOBALS["rreport"]) : 0;
 	}
 	public static function exist($i = null){
