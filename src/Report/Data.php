@@ -17,9 +17,17 @@ class Data{
 		if(!isset($GLOBALS["rreport"]) && is_null($i))	return [];
 		if(!isset($GLOBALS["rreport"]) && !is_null($i))	return null;
 
-		if(is_null($i)) return (isset($GLOBALS["rreport"]))? 										$GLOBALS["rreport"] : [];
-		if($i >= 0) 	return (isset($GLOBALS["rreport"][$i]))? 									$GLOBALS["rreport"][$i] : null;
+		if(is_null($i)) return (isset($GLOBALS["rreport"]))? 									$GLOBALS["rreport"] : [];
+		if($i >= 0) 	return (isset($GLOBALS["rreport"][$i]))? 								$GLOBALS["rreport"][$i] : null;
 		if($i < 0) 		return (isset($GLOBALS["rreport"][count($GLOBALS["rreport"]) + $i]))?	$GLOBALS["rreport"][count($GLOBALS["rreport"]) + $i] : null;
+	}
+
+	public static function groupFilter($group){
+		$array = [];
+		foreach($GLOBALS["rreport"] as $rep){
+			if($rep->group == $group) $array[] = $rep;
+		}
+		return $array;
 	}
 
 	public static function exist($i = null){

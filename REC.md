@@ -1,5 +1,6 @@
-# REPORT \ ACTION
-It is parent class of all Report groups (mysql, file, form,...)\n
+# REPORT \ REC
+This class record/collect all Reports which are set.
+
 There is 2 ways how to work with this class:
 1) **STATIC** collect all report action data in one GLOBAL array
 1) **INSTANCE** collect all report action data only from `start()` to `end()`
@@ -10,16 +11,19 @@ There is 2 ways how to work with this class:
 
 # STATIC PART
 
-## ::set($group, $state, $type = 0, $num = 0)
-- **$group [string]** "mysql", "file", "form",...
-- **$styte [string]** "success", "info", "fail"
-- **$type [string]** "1062", "insert", "move",...
-- **$num [int]** how many items were in action
+## ::add($rData)
+- **$rData [[Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** 
 
-All collecting do **static** part by method **set**. This collect data everywhere it is.
+Add instance of `rData` into GLOBAL array report
 
 ```php
-\Report\Action::set("action", "fail")
+\Report\Rec::add(new \Report\rData([
+	"group" => "action",
+	"state" => "fail",
+	"msg"   => "This action failed.",
+	"type"  => 0,
+	"num"   => 1
+]));
 
 ```
 

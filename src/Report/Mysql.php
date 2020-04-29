@@ -3,14 +3,6 @@ namespace Report;
 
 class Mysql extends Action{
 
-
-
-
-
-
-
-
-
 	public static function set($mysql, $sql){
 		$errno 			= $mysql->errno;
 		$affected_rows 	= $mysql->affected_rows;

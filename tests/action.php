@@ -10,8 +10,8 @@ require_once '__reset.php';
 echo "<h2>REPORT \ FORM \ INSERT</h2>";
 echo "<hr>";
 
-echo '$my_rec = new \Report\Action()'."\n";
-$my_rec = new \Report\Action();
+echo '$my_rec = new \Report\Rec()'."\n";
+$my_rec = new \Report\Rec();
 
 echo "<br>---------------------------------------------<br><br>";
 
@@ -21,8 +21,8 @@ echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail
 echo '\Report\Action::set("action", "success")'.\Report\Action::set("action", "success")."\n";
 echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail")."\n";
 echo '\Report\Action::set("action", "info")'.\Report\Action::set("action", "info")."\n";
-echo "\n";
 echo '$my_rec->end()'.$my_rec->end()."\n";
+echo "\n";
 echo '$my_rec->msgHtml() => '."\n".$my_rec->msgHtml()."\n";
 echo '$my_rec->getHtml() => '."\n".$my_rec->getHtml()."\n";
 echo '$my_rec->msg() => ['."\n";
@@ -45,8 +45,8 @@ echo "<br>---------------------------------------------<br><br>";
 echo '$my_rec->start()'.$my_rec->start()."\n";
 echo '\Report\Action::set("action", "success")'.\Report\Action::set("action", "success")."\n";
 echo '\Report\Action::set("action", "info")'.\Report\Action::set("action", "info")."\n";
-echo "\n";
 echo '$my_rec->end()'.$my_rec->end()."\n";
+echo "\n";
 echo '$my_rec->msgHtml() => '."\n".$my_rec->msgHtml()."\n";
 
 echo "<br>---------------------------------------------<br><br>";
@@ -60,8 +60,8 @@ echo '$my_rec->start([
 ])."\n";
 echo '\Report\Action::set("action", "success")'.\Report\Action::set("action", "success")."\n";
 echo '\Report\Action::set("action", "info")'.\Report\Action::set("action", "info")."\n";
-echo "\n";
 echo '$my_rec->end()'.$my_rec->end()."\n";
+echo "\n";
 echo '$my_rec->msgHtml() => '."\n".$my_rec->msgHtml()."\n";
 
 echo "<br>---------------------------------------------<br><br>";
@@ -89,6 +89,7 @@ echo '<table style="width:100%; text-align:left;">';
 foreach(\Report\Data::get() as $report_data){
 	echo '<tr>';
 		echo '<td>['.$report_data->state.']</td>';
+		echo '<td>['.$report_data->type.']</td>';
 		echo '<td>'.$report_data->msg.'</td>';
 
 		//echo "[".$report_data->state."]	".$report_data->msg."\n";
