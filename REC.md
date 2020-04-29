@@ -89,6 +89,7 @@ $my_rec->end()
 
 ## print report data
 ```php
+// ALL what was collected GLOBALLY
 \Report\Rec::get() => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in global array."]);
 	[1] => Report\Rec(["state" => "info", "msg" => "This action inform you in global array."]);
@@ -98,23 +99,36 @@ $my_rec->end()
 	[5] => Report\Rec(["state" => "success", "msg" => "This action succes in global array."]);
 ]
 
+// ONLY what was collected LOCALY in '$my_rec'
 $my_rec->get() => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in local."]);
 	[1] => Report\Rec(["state" => "success", "msg" => "This action success in local."]);
 	[2] => Report\Rec(["state" => "success", "msg" => "This action also success in local."]);
 ]
-
+// ONLY what was collected LOCALY in '$my_rec' and FAILED!!!
 $my_rec->msg() => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in local."]);
 ]
+```
+## HTML print report data
+```php
+// ALL what was collected GLOBALLY
+\Report\Rec::get() => [
+	[0] => "[fail] This action failed in global array.",
+	[1] => "[info] This action inform you in global array.",
+	[2] => "[fail] This action failed in local.",
+	[3] => "[success] This action success in local.",
+	[4] => "[success] This action also success in local.",
+	[5] => "[success] This action succes in global array."
+]
 
-
+// ONLY what was collected LOCALY in '$my_rec'
 $my_rec->getHtml() => [
 	[0] => "[fail] This action failed in local",
 	[1] => "[success] This action success in local",
 	[2] => "[success] This action also success in local"
 ]
-
+// ONLY what was collected LOCALY in '$my_rec' and FAILED!!!
 $my_rec->msgHtml() => [
 	[0] => "[fail] This action failed in local"
 ]
