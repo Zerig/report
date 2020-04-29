@@ -48,7 +48,7 @@ $my_rec->msg() => [
 ## HTML print report data
 ```php
 // ALL what was collected GLOBALLY
-\Report\Rec::get() => [
+\Report\Rec::getHtml() => [
 	[0] => "[fail] This action failed in global array.",
 	[1] => "[info] This action inform you in global array.",
 	[2] => "[fail] This action failed in local.",
@@ -74,12 +74,10 @@ $my_rec->msgHtml() => [
 <hr>
 <br>
 
-# STATIC PART
-
 ## ::add($rData)
 - **$rData [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]**
 
-Add instance of `rData` into GLOBAL array report
+Add instance of `rData` into **GLOBAL array report**
 ```php
 // BOTH varian ary VALID ↓
 \Report\Rec::add(new \Report\rData([
@@ -105,7 +103,7 @@ Add instance of `rData` into GLOBAL array report
 ## ::getDepth()
 - **@returns [int]** number of current collect reports
 
-Returns number of items in GLOBAL array reports
+Returns number of items in **GLOBAL array** reports
 ```php
 // BOTH varian ary VALID ↓
 \Report\Rec::add(new \Report\rData(["state" => "fail", "msg" => "This action failed."]));
@@ -119,7 +117,7 @@ Returns number of items in GLOBAL array reports
 ## ::exist()
 - **@returns [boolean]** if GLOBAL array exist or not
 
-Returns number of items in GLOBAL array reports
+Returns number of items in **GLOBAL array** reports
 ```php
 \Report\Rec::exist() => 0
 
@@ -134,16 +132,29 @@ Returns number of items in GLOBAL array reports
 <hr>
 <br>
 
-# INSTANCE PART
 
-## start($success = null)
+## start($success = null), end()
 - **$success [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** what will be shown if all report success
 
-This record
+Collect records only from `start()` to `end()`. It is **LOCAL array report**.
 ```php
 \Report\Rec::add(["state" => "fail", "msg" => "This action failed in global array."]);
 $my_rec->start(["state" => "success", "msg"   => "Every action success"]);
 \Report\Rec::add(["state" => "fail", "msg" => "This action failed in local."]);
 \Report\Rec::add(["state" => "success", "msg" => "This action success in local."]);
 $my_rec->end()
+```
+
+```php
+\Report\Rec::getHtml() => [
+	[0] => "[fail] This action failed in global array.",
+	[1] => "[fail] This action failed in local.",
+	[2] => "[success] This action success in local."
+]
+
+// ONLY what was collected LOCALY in '$my_rec'
+$my_rec->getHtml() => [
+	[0] => "[fail] This action failed in local.",
+	[1] => "[success] This action success in local."
+]
 ```
