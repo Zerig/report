@@ -27,13 +27,14 @@ Every group report has special class inherits `\Report\Action`. That is because 
 - **info** when you want inform user about something
 - **fail** when action failed
 
-## MESSAGE
+## MSG
 Text which will be shown user after his action. They are saved in JSON file in the same folder as method.\n
 ```JSON
 {
 	"action": {
 		"fail":{
-			"0": "Something goes WRONG!"
+			"0": "Something goes WRONG!",
+			"duplicit": "0% 1% already exist"
 		},
 		"info":{
 			"0": "Nothig is happend."
@@ -47,4 +48,14 @@ Text which will be shown user after his action. They are saved in JSON file in t
 ```
 1) First level say which `group` of answers you want
 2) Second level is `state`: How action happend
-3) Third level `type` say what specifically happend. But if that `type` is not found it will use **"0"**
+3) Third level `type` say what specifically happend. But if that `type` is not found it will use `type = 0`
+
+More information in class [\REPORT\ACTION](https://github.com/Zerig/report/blob/master/ACTION.md)
+
+## TYPE
+Say what specifically happend
+- duplicit item
+- file exist
+- file has no permission to remove
+
+They can be as a shortcut `'duplicit'`, or code `'1062'`.
