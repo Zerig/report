@@ -85,7 +85,8 @@ $my_rec->end()
 
 \Report\Rec::add(["state" => "success", "msg" => "This action succes in global array."]);
 
-// PRINTING DATA
+```
+```php
 \Report\Rec::get() => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in global array."]);
 	[1] => Report\Rec(["state" => "info", "msg" => "This action inform you in global array."]);
