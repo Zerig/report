@@ -15,5 +15,20 @@ Instance of this class represents one action report. There is everything what vi
 
 ```
 
-## GROUP
+### GROUP
 Every group report has special class inherits `\Report\Action`. That is because every goup need to be solved differently.
+- **Report\Mysql** should set report about *DB* acions (insert, update, delete,...)
+- **Report\File** should set report about acions with *FILES* (delete, upload, move,...)
+- **Report\Form** should set report about *FORM* actions (input is empty,...)
+
+### STATE
+Every group report has special class inherits `\Report\Action`. That is because every goup need to be solved differently.
+- **success** when action was successfull
+- **info** when you want inform user about something
+- **fail** when action failed
+
+### MESSAGE
+Every group report has special class inherits `\Report\Action`. That is because every goup need to be solved differently.
+- **success** when action was successfull
+- **info** when you want inform user about something
+- **fail** when action failed
