@@ -28,50 +28,23 @@ Every group report has special class inherits `\Report\Action`. That is because 
 - **fail** when action failed
 
 ## MESSAGE
-Text which will be shown user after his action.
-
+Text which will be shown user after his action. They are saved in JSON file in the same folder as method.\n
 ```JSON
 {
 	"action": {
 		"fail":{
-			"0": "Něco se pokazilo!"
+			"0": "Something goes WRONG!"
 		},
 		"info":{
-			"0": "Nic neproběhlo."
+			"0": "Nothig is happend."
 		},
 		"success":{
-			"0": "Vše proběhlo v pořádku."
-		}
-	},
-	"mysql": {
-		"fail":{
-			"0":		"Něco se pokazilo!",
-			"1062": 	"Duplicita: %0 <i>%1</i> již existuje!"
-		},
-		"info":{
-			"0":		"Akce nebyla provedena, něco neplatí!",
-			"update":	"%0 <i>%1</i> nemůže být upraven/a, protože neexistuje!",
-			"delete":	"%0 <i>%1</i> nemůže být smazán/a, protože neexistuje!",
-			"select":	"Nebyl/a nalezen/a žádný/á %s!"
-		},
-		"success":{
-			"0":		"Vše proběhlo v pořádku.",
-			"insert":	"%0 <i>%1</i> byl/a úspěšně přidána.",
-			"update":	"%0 <i>%1</i> byl/a úspěšně upraven/a.",
-			"delete":	"%0 <i>%1</i> byl/a úspěšně smazána.",
-			"select":	"%0 <i>%1</i> byl/a úspěšně nalezen/a."
-		}
-	},
-	"file": {
-		"fail":{
-			"0":	"Něco se pokazilo",
-			"1062": "Duplicitní Položka: <i>%s</i> již existuje!",
-			"1146": "Tabulka neexistuje"
+			"0": "Everything happend successfully."
 		}
 	}
-
-
-
 }
 
 ```
+1) First level say which `group` of answers you want
+2) Second level is `state`: How action happend
+3) Third level `type` say what specifically happend. But if that `type` is not found it will use **"0"**
