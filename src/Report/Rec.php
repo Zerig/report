@@ -37,12 +37,12 @@ class Rec{
 
 
 	public function getHtml(){
-		$html = (isset($GLOBALS["html_msg"]))? $GLOBALS["html_msg"] : "[%s] %m";
-		return self::toHtml($html, self::get());
+		return self::toHtml(self::get());
 	}
 
 
 	public function msg(){
+		$data = (self::_isStatic())? $GLOBALS["rreport"] : $this->data;
 		$fails = [];
 		foreach($this->data as $d){
 			if($d->state == "fail") $fails[] = $d;
@@ -56,21 +56,13 @@ class Rec{
 
 
 	public function msgHtml(){
-		$html = (isset($GLOBALS["html_msg"]))? $GLOBALS["html_msg"] : "[%s] %m";
-		$fails = [];
-		foreach($this->data as $d){
-			if($d->state == "fail") $fails[] = $d;
-		}
-
-		$array_data = (empty($fails))? [$this->success] : $fails;
-		$array_data = array_filter($array_data);	// remove all empty items
-
-		return self::toHtml($html, $array_data);
+		return self::toHtml(self:msg());
 	}
 
 
 
-	public static function toHtml($html, $array_data){
+	public static function toHtml($array_data){
+		$html = (isset($GLOBALS["html_msg"]))? $GLOBALS["html_msg"] : "[%s] %m";
 		$html_data = "";
 		foreach($array_data as $data){
 			$html_data .= str_replace(

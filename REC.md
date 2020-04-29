@@ -132,7 +132,41 @@ Returns number of items in **GLOBAL array** reports
 <hr>
 <br>
 
+# INIT RECORDING
+## start($success = null)
+- **$success [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** what will be shown if all report success
+From `start()` also begins collecting record **locally**. Globals still continue!
 
+## end()
+Collectin continue until `end()`. You have to end it, or you cannot get local data!
+
+```php
+\Report\Rec::add(["state" => "fail", "msg" => "This action failed in global array."]);
+$my_rec->start(["state" => "success", "msg"   => "Every action success"]);
+\Report\Rec::add(["state" => "fail", "msg" => "This action failed in local."]);
+\Report\Rec::add(["state" => "success", "msg" => "This action success in local."]);
+$my_rec->end()
+```
+
+```php
+\Report\Rec::getHtml() => [
+	[0] => "[fail] This action failed in global array.",
+	[1] => "[fail] This action failed in local.",
+	[2] => "[success] This action success in local."
+]
+
+// ONLY what was collected LOCALY in '$my_rec'
+$my_rec->getHtml() => [
+	[0] => "[fail] This action failed in local.",
+	[1] => "[success] This action success in local."
+]
+```
+
+<br>
+<hr>
+<br>
+
+# PRINT RECORDING
 ## start($success = null), end()
 - **$success [array / [Report\rData](https://github.com/Zerig/report/blob/master/RDATA.md)]** what will be shown if all report success
 
