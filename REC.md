@@ -247,7 +247,9 @@ Html print use what you save in this GLOBAL variable.
 - `'%n'` where will be `$num` variable
 ```php
 $GLOBALS["html_msg"] = "[%s] %m";
+$GLOBALS["html_msg"] = "<div class='alert alert-%s' role='alert'>%m</div>";
 ```
+Initial HTML setting is `"[%s] %m"`. When you set nothing this will be used!
 
 ## getHtml($i = null)
 - **$i [num]** id of item you want
