@@ -58,4 +58,8 @@ Say what specifically happend
 - file exist
 - file has no permission to remove
 
-They can be as a shortcut `'duplicit'`, or code `'1062'`.
+They can be as a shortcut `'duplicit'`, or code `'1062'`. And if `type` is not found in **JSON** it will use `type = 0`.
+
+
+## NUM
+Number of items in action. How manz items was changed during MYSQL query. How many files was uploaded...
