@@ -70,7 +70,7 @@ Returns number of items in GLOBAL array reports
 <br>
 
 # INSTANCE PART
-
+## collect report data
 ```php
 $GLOBALS["html_msg"] = "[%s] %m";
 
@@ -86,6 +86,8 @@ $my_rec->end()
 \Report\Rec::add(["state" => "success", "msg" => "This action succes in global array."]);
 
 ```
+
+## print report data
 ```php
 \Report\Rec::get() => [
 	[0] => Report\Rec(["state" => "fail", "msg" => "This action failed in global array."]);
