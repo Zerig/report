@@ -2,16 +2,15 @@
 namespace Report;
 
 class Action{
-	public $depth;
-	public $data = [];
-	public $success;
 
 
 	public static function set($group, $state, $data = [], $type = 0, $num = 0){
 		$conf = \Noodlehaus\Config::load(__DIR__ . '\report.json');
 		$text = $conf->all();
+		echo print_r($group); 
+		echo print_r($text);
 
-		if(!isset($data[0])) $data[] = "";
+		if(!isset($data[0])) $data[] = "Akce";
 		if(!isset($data[1])) $data[] = "";
 		if(!isset($data[2])) $data[] = "";
 

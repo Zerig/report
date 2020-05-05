@@ -17,7 +17,7 @@ echo "<br>---------------------------------------------<br><br>";
 
 echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail")."\n";
 echo '$my_rec->start()'.$my_rec->start()."\n";
-echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail")."\n";
+echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail", ["Člověk"])."\n";
 echo '\Report\Action::set("action", "success")'.\Report\Action::set("action", "success")."\n";
 echo '\Report\Action::set("action", "fail")'.\Report\Action::set("action", "fail")."\n";
 echo '\Report\Action::set("action", "info")'.\Report\Action::set("action", "info")."\n";

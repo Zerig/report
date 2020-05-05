@@ -3,8 +3,9 @@ namespace Report;
 
 class Mysql extends Action{
 
-	public static function set($mysql, $sql){
-		$errno 			= $mysql->errno;
+	//public static function set($mysql, $sql){
+	public static function set($group, $state, $data = [], $type = 0, $num = 0){
+		/*$errno 			= $mysql->errno;
 		$affected_rows 	= $mysql->affected_rows;
 		$state 			= self::getState($affected_rows);
 		$query_type 	= self::getQueryType($sql);
@@ -24,7 +25,7 @@ class Mysql extends Action{
 			"msg"   => $msg
 		]);
 		return;
-
+*/
 	}
 
 	private function getQueryType($sql){
